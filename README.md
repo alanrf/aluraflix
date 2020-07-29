@@ -1,8 +1,9 @@
 # Aluraflix
 This project is being developed during "Imersão React Alura".
-It uses:
-    React.js
+It's basically a Netflix lookalike web app built on React.js.
 
+##Could be visited published at:
+https://aluraflix-alanrf.vercel.app/
 
 ## Below, text from the default build project generated using:
 ### npx create-react-app aluraflix
