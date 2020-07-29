@@ -1,3 +1,12 @@
+# Aluraflix
+This project is being developed during "Imersão React Alura".
+It uses:
+    React.js
+
+
+## Below, text from the default build project generated using:
+### npx create-react-app aluraflix
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
