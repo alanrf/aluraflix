@@ -8,8 +8,9 @@ The app contains a backend and a frontend.
 https://aluraflix-alanrf.vercel.app/
 
 *Backend:
-https://alanrf-aluraflix.herokuapp.com
-https://alanrf-aluraflix.herokuapp.com/categorias
+https://alanrf-aluraflix.herokuapp.com <br />
+https://alanrf-aluraflix.herokuapp.com/categorias <br />
+https://alanrf-aluraflix.herokuapp.com/videos <br />
 
 ## Below, text from the default build project generated using:
 ### npx create-react-app aluraflix
@@ -35,7 +36,7 @@ You will also see any lint errors in the console.
 
 ### `npm run dev`
 Runs the app in the development mode (both Backend and Frontend).<br />
-Open [http://localhost:8080](http://localhost:8080) to view the backend in the browser.
+Open [http://localhost:8080](http://localhost:8080) to view the backend in the browser.<br />
 Open [http://localhost:3000](http://localhost:3000) to view the frontend in the browser.
 
 ### `npm run test`
