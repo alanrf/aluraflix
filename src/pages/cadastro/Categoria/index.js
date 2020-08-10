@@ -3,32 +3,18 @@ import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
+import useForm from '../../../hooks/useForm';
 
 function CadastroCategoria() {
   const [categorias, setCategorias] = useState([]);
 
   const valoresIniciais = {
-    nome: '',
+    titulo: '',
     descricao: '',
     cor: '',
   };
-  const [values, setValues] = useState(valoresIniciais);
 
-  function setValue(chave, valor) {
-    setValues({
-      ...values,
-      [chave]: valor, // nome: valor
-    });
-  }
-
-  function handleOnChange(event) {
-    // setValue(event.target.name, event.target.value);
-    const { name, value } = event.target;
-    setValue(
-      name,
-      value,
-    );
-  }
+  const { handleChange, values, clearForm } = useForm(valoresIniciais);
 
   useEffect(() => {
     if (window.location.href.includes('localhost')) {
@@ -51,20 +37,20 @@ function CadastroCategoria() {
     <PageDefault>
       <h1>
         Cadastro de Categoria :
-        {values.nome}
+        {values.titulo}
       </h1>
       <form onSubmit={function handleSubmit(event) {
         event.preventDefault();
         setCategorias([...categorias, values]);
-        setValues(valoresIniciais);
+        clearForm();
       }}
       >
         <FormField
           label="Nome da Categoria"
           type="text"
-          name="nome"
-          value={values.nome}
-          onChange={handleOnChange}
+          name="titulo"
+          value={values.titulo}
+          onChange={handleChange}
         />
 
         <FormField
@@ -72,7 +58,7 @@ function CadastroCategoria() {
           type="textarea"
           name="descricao"
           value={values.descricao}
-          onChange={handleOnChange}
+          onChange={handleChange}
         />
 
         <FormField
@@ -80,16 +66,16 @@ function CadastroCategoria() {
           type="color"
           name="cor"
           value={values.cor}
-          onChange={handleOnChange}
+          onChange={handleChange}
         />
         <Button>
           Cadastrar
         </Button>
       </form>
       <ul>
-        {categorias.map((categoria, indice) => (
-          <li key={`${categoria}${indice}`}>
-            {categoria.nome}
+        {categorias.map((categoria) => (
+          <li key={`${categoria.titulo}`}>
+            {categoria.titulo}
           </li>
         ))}
       </ul>
